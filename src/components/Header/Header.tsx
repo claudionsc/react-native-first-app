@@ -1,12 +1,24 @@
-import React from 'react'
-import { View, Image, Text} from "react-native"
-import { HeaderMain } from './HeaderS'
+import React from "react";
+import { View, Image, Text } from "react-native";
+import { HeaderMain, HeaderStories, HeaderStoriesImage } from "./HeaderS";
 
 export const Header = () => {
-  return (
-    <HeaderMain>
-      <Text>Testeee</Text>
+  const stories = ["Pessoa1", "Pessoa2", "Pessoa3", "Pessoa4", "Pessoa5"];
 
-    </HeaderMain>
-  )
-}
+  return (
+    <>
+      <HeaderMain>
+        <Text>Instagram</Text>
+        <HeaderStories>
+          {stories.map(() => (
+            <HeaderStoriesImage
+              source={{
+                uri: "https://github.com/claudionsc.png",
+              }}
+            />
+          ))}
+        </HeaderStories>
+      </HeaderMain>
+    </>
+  );
+};
